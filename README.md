@@ -12,6 +12,8 @@ coming soon
 
 # Add visualization exsamples of different multi-modal fusion methods
 <div  align="center">    
+<a href="https://public.flourish.studio/visualisation/10968749/">
  <img src="resources/bar.png" width = "562" height = "450" alt="RSMSS" align=center />
+ </a>
 </div>
 coming soon
