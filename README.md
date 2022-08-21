@@ -4,7 +4,7 @@ Official code for Parse Semantics from Geometry: A Remote Sensing Benchmark for 
 
 # Add results of using only the height modality
 <div  align="center">    
- <img src="resources/res1.png" width = "400" height = "500" alt="RSMSS" align=center />
+ <img src="resources/res1.png" width = "750" height = "600" alt="RSMSS" align=center />
 </div>
 coming soon
 
