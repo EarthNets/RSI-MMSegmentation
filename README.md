@@ -13,7 +13,10 @@ coming soon
 # Add visualization exsamples of different multi-modal fusion methods
 
 <div class="flourish-embed flourish-chart" data-src="visualisation/10968749">
-    <script src="https://public.flourish.studio/resources/embed.js"></script>
+ 
+ <script src="https://public.flourish.studio/resources/embed.js">
+    </script>
+ 
 </div>
 
 coming soon
