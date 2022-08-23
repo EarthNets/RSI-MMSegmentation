@@ -8,7 +8,7 @@ Official code for Parse Semantics from Geometry: A Remote Sensing Benchmark for 
  <img src="resources/res1.png" width = "562" height = "450" alt="RSMSS" align=center />
 </div>
 
-coming soon
+updating...
 
 # Add visualization exsamples of different multi-modal fusion methods
 <div  align="center">    
@@ -16,4 +16,7 @@ coming soon
  <img src="resources/bar.png" width = "562" height = "450" alt="RSMSS" align=center />
  </a>
 </div>
-coming soon
+updating
+
+# Add experiments to study the transferability the dataset
+Coming soon
