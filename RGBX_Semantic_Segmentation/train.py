@@ -13,7 +13,7 @@ from torch.nn.parallel import DistributedDataParallel
 
 from config import config
 from dataloader.dataloader import get_train_loader
-from models.builder import EncoderDecoder as segmodel
+from models.builder_x import EncoderDecoder as segmodel
 from dataloader.RGBXDataset import RGBXDataset
 from utils.init_func import init_weight, group_weight
 from utils.lr_policy import WarmUpPolyLR

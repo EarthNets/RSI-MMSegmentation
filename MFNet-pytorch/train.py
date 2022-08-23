@@ -51,6 +51,8 @@ def train(epo, model, train_loader, optimizer):
 
         optimizer.zero_grad()
         logits = model(images)
+        print(torch.max(logits[0],0)[1])
+        print(labels[0])
         loss = F.cross_entropy(logits, labels)
         loss.backward()
         optimizer.step()
