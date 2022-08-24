@@ -22,7 +22,7 @@ updating...
 # Add visualization examples of different multi-modal fusion methods
 
 <div  align="center">    
- <img src="resources/vis1.png" width = "980" height = "450" alt="RSMSS" align=center />
+ <img src="resources/vis1.png" width = "980" height = "420" alt="RSMSS" align=center />
 </div>
 
 
