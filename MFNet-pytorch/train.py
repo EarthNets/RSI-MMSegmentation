@@ -12,7 +12,7 @@ from util.MF_dataset import MF_dataset
 from util.RSUSS_dataset import RSUSS_dataset
 from util.util import calculate_accuracy
 from util.augmentation import RandomFlip, RandomCrop, RandomCropOut, RandomBrightness, RandomNoise
-from model import MFNet, SegNet, SSegNet
+from model import MFNet, SegNet, SSegNet, ResNetMFNet
 
 from tqdm import tqdm
 
@@ -22,7 +22,7 @@ data_dir  = '../../data/MF/'
 model_dir = 'weights/'
 augmentation_methods = [
     RandomFlip(prob=0.5),
-    RandomCrop(crop_rate=0.1, prob=1.0), 
+    RandomCrop(crop_rate=0.1, prob=1.0),
     # RandomCropOut(crop_rate=0.2, prob=1.0),
     # RandomBrightness(bright_range=0.15, prob=0.9),
     # RandomNoise(noise_range=5, prob=0.9),
@@ -43,7 +43,7 @@ def train(epo, model, train_loader, optimizer):
     model.train()
 
     for it, (images, labels, names) in enumerate(train_loader):
-        images = Variable(images).cuda(args.gpu) 
+        images = Variable(images).cuda(args.gpu)
         labels = Variable(labels).cuda(args.gpu)
         if args.gpu >= 0:
             images = images.cuda(args.gpu)
@@ -51,8 +51,6 @@ def train(epo, model, train_loader, optimizer):
 
         optimizer.zero_grad()
         logits = model(images)
-        print(torch.max(logits[0],0)[1])
-        print(labels[0])
         loss = F.cross_entropy(logits, labels)
         loss.backward()
         optimizer.step()
@@ -110,7 +108,7 @@ def main():
 
     model = eval(args.model_name)(n_class=n_class)
     if args.gpu >= 0: model.cuda(args.gpu)
-    optimizer = torch.optim.SGD(model.parameters(), lr=lr_start, momentum=0.9, weight_decay=0.0005) 
+    optimizer = torch.optim.SGD(model.parameters(), lr=lr_start, momentum=0.9, weight_decay=0.0005)
     # optimizer = torch.optim.Adam(model.parameters(), lr=lr_start)
 
     if args.epoch_from > 1:
