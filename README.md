@@ -27,5 +27,5 @@ updating...
 </div>
 updating
 
-# Add experiments to study the transferability the dataset
+# Add experiments to study the transferability
 Coming soon
