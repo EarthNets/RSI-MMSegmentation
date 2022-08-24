@@ -19,7 +19,14 @@ The proposed benchmark dataset RSMSS can be donwloaded from the following [link]
 
 updating...
 
-# Add visualization exsamples of different multi-modal fusion methods
+# Add visualization examples of different multi-modal fusion methods
+
+<div  align="center">    
+ <img src="resources/vis1.png" width = "613" height = "500" alt="RSMSS" align=center />
+</div>
+
+
+# Add comparison and analysis of multiple modalities
 <div  align="center">    
 <a href="https://public.flourish.studio/visualisation/10968749/">
  <img src="resources/bar.png" width = "562" height = "450" alt="RSMSS" align=center />
