@@ -1,7 +1,7 @@
 # RSI-MMSegmentation
 
 Official code for:
-# Parse Semantics from Geometry: A Remote Sensing Benchmark for Multi-modal Semantic Segmentation
+## Parse Semantics from Geometry: A Remote Sensing Benchmark for Multi-modal Semantic Segmentation
 
 The proposed benchmark dataset RSMSS can be donwloaded from the following [link](https://syncandshare.lrz.de/getlink/fi8rRALX7JwWtMaSH1jpxiVA/RSUSS.zip):
 1. https://syncandshare.lrz.de/getlink/fi8rRALX7JwWtMaSH1jpxiVA/RSUSS.zip
