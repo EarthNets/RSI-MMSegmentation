@@ -39,8 +39,8 @@ Comparison results of different multi-modal fusion strategies on the RSMSS datas
  </a><a href="https://public.flourish.studio/visualisation/11006073/">
  <img src="resources/anay.png" width = "362" height = "250" alt="RSMSS" align=center />
  </a>
- 
 </center>
+
 updating
 
 # Add experiments to study the transferability
