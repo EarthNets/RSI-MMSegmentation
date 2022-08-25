@@ -42,7 +42,7 @@ updating more visualizatio results...
  </a>
 </center>
 
-updating
+Clicking on the pictures to view the data in an interactive way!
 
 # Add experiments to study the transferability
 Coming soon
