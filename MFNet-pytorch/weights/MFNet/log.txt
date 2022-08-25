@@ -298,3 +298,6 @@
 | epo:45/50 lr:0.0010 train_loss_avg:0.3287 train_acc_avg:0.8753 | val_loss_avg:0.4884 val_acc_avg:0.8254
 | epo:46/50 lr:0.0010 train_loss_avg:0.3277 train_acc_avg:0.8758 | val_loss_avg:0.4990 val_acc_avg:0.8200
 | epo:47/50 lr:0.0009 train_loss_avg:0.3272 train_acc_avg:0.8760 | val_loss_avg:0.4978 val_acc_avg:0.8231
+| epo:48/50 lr:0.0009 train_loss_avg:0.3264 train_acc_avg:0.8764 | val_loss_avg:0.4901 val_acc_avg:0.8246
+| epo:49/50 lr:0.0009 train_loss_avg:0.3258 train_acc_avg:0.8764 | val_loss_avg:0.4932 val_acc_avg:0.8244
+| epo:50/50 lr:0.0008 train_loss_avg:0.3248 train_acc_avg:0.8768 | val_loss_avg:0.4936 val_acc_avg:0.8237
