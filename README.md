@@ -17,13 +17,13 @@ The proposed benchmark dataset RSMSS can be donwloaded from the following [link]
  <img src="resources/res1.png" width = "613" height = "500" alt="RSMSS" align=center />
 </div>
 
-### Comparison results of different multi-modal fusion methods on the RSMSS dataset for supervised semantic segmentation。
+  Comparison results of different multi-modal fusion methods on the RSMSS dataset for supervised semantic segmentation。
 
 <div  align="center">    
  <img src="resources/res2.png" width = "620" height = "422" alt="RSMSS" align=center />
 </div>
 
-### Comparison results of different multi-modal fusion strategies on the RSMSS dataset for supervised semantic segmentation.
+  Comparison results of different multi-modal fusion strategies on the RSMSS dataset for supervised semantic segmentation.
 
 # Add visualization examples of different multi-modal fusion methods
 
@@ -31,7 +31,7 @@ The proposed benchmark dataset RSMSS can be donwloaded from the following [link]
  <img src="resources/vis1.png" width = "980" height = "420" alt="RSMSS" align=center />
 </div>
 
-## updating more visualizatio results...
+  updating more visualizatio results...
 
 # Add comparison and analysis of multiple modalities
 <center  class="half">    
@@ -42,7 +42,7 @@ The proposed benchmark dataset RSMSS can be donwloaded from the following [link]
  </a>
 </center>
 
-## Clicking on the pictures to view the data in an interactive way!
+  Clicking on the pictures to view the data in an interactive way!
 
 # Add experiments to study the transferability
 Coming soon
