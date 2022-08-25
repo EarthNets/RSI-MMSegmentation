@@ -31,6 +31,7 @@ Comparison results of different multi-modal fusion strategies on the RSMSS datas
  <img src="resources/vis1.png" width = "980" height = "420" alt="RSMSS" align=center />
 </div>
 
+updating more visualizatio results...
 
 # Add comparison and analysis of multiple modalities
 <center  class="half">    
