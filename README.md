@@ -14,7 +14,7 @@ The proposed benchmark dataset RSMSS can be donwloaded from the following [link]
 # Add results of using only the height modality
 
 <div  align="center">    
- <img src="resources/res1.png" width = "613" height = "400" alt="RSMSS" align=center />
+ <img src="resources/res1.png" width = "613" height = "430" alt="RSMSS" align=center />
 </div>
 
   Comparison results of different multi-modal fusion methods on the RSMSS dataset for supervised semantic segmentation。
@@ -28,7 +28,7 @@ The proposed benchmark dataset RSMSS can be donwloaded from the following [link]
 # Add visualization examples of different multi-modal fusion methods
 
 <div  align="center">    
- <img src="resources/vis1.png" width = "980" height = "420" alt="RSMSS" align=center />
+ <img src="resources/vis1.png" width = "980" height = "460" alt="RSMSS" align=center />
 </div>
 
   updating more visualization results...
