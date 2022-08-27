@@ -3,6 +3,7 @@ import os
 import argparse
 import time
 import numpy as np
+import cv2
 
 import torch
 import torch.nn.functional as F
@@ -27,7 +28,7 @@ def main():
     model.load_state_dict(torch.load(final_model_file, map_location={'cuda:0':'cuda:1'}))
     print('done!')
 
-    test_dataset  = Potsdam_dataset(data_dir, 'test', have_label=True)
+    test_dataset  = RSUSS_dataset(data_dir, 'test', have_label=True)
     test_loader  = DataLoader(
         dataset     = test_dataset,
         batch_size  = args.batch_size,
@@ -59,13 +60,20 @@ def main():
                     % (it+1, test_loader.n_iter, float(loss), float(acc)))
 
             predictions = logits.argmax(1)
-            print(predictions.max(),predictions.min())
             preds = predictions.clone()
-            #predictions[preds==2] = 5
-            #predictions[preds==3] = 6
-            #predictions[preds==4] = 0
-            #predictions[preds==6] = 4
-            #predictions[preds==5] = 0
+            preds[predictions==7] = 0
+            print(preds.shape)  #1,480,640
+            pred = preds
+            pred = pred.squeeze().cpu().numpy()
+            gt = labels.squeeze().cpu().numpy()
+            pred[gt==0] = 0
+            #print(pred.min(),pred.max())
+            normpred = cv2.normalize(pred,  None, 0, 255, cv2.NORM_MINMAX)
+            normgt = cv2.normalize(gt, None, 0, 255, cv2.NORM_MINMAX)
+            normpred = cv2.applyColorMap(normpred.astype(np.uint8), cv2.COLORMAP_JET)
+            normgt = cv2.applyColorMap(normgt.astype(np.uint8), cv2.COLORMAP_JET)
+            cv2.imwrite("vis/pred_"+str(it)+".png", normpred)
+            cv2.imwrite("vis/gt_"+str(it)+".png", normgt)
 
             for gtcid in range(n_class):
                 for pcid in range(n_class):
@@ -87,15 +95,15 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='Test MFNet with pytorch')
     parser.add_argument('--model_name',  '-M',  type=str, default='MFNet')
-    parser.add_argument('--batch_size',  '-B',  type=int, default=16)
+    parser.add_argument('--batch_size',  '-B',  type=int, default=1)
     parser.add_argument('--gpu',         '-G',  type=int, default=0)
-    parser.add_argument('--num_workers', '-j',  type=int, default=8)
+    parser.add_argument('--num_workers', '-j',  type=int, default=1)
     args = parser.parse_args()
 
     model_dir        = os.path.join(model_dir, args.model_name)
     #final_model_file = os.path.join(model_dir, 'PT_resnet_final.pth')
     #final_model_file = os.path.join(model_dir, 'final.pth')
-    final_model_file = os.path.join(model_dir, 'RSUSS/RSUSS_PT_5.pth')
+    final_model_file = os.path.join(model_dir, 'RSUSS/RSUSS_final.pth')
     assert os.path.exists(final_model_file), 'model file `%s` do not exist' % (final_model_file)
 
     print('| testing %s on GPU #%d with pytorch' % (args.model_name, args.gpu))
