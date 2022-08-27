@@ -31,7 +31,7 @@ The proposed benchmark dataset RSMSS can be donwloaded from the following [link]
  <img src="resources/vis1.png" width = "980" height = "420" alt="RSMSS" align=center />
 </div>
 
-  updating more visualizatio results...
+  updating more visualization results...
 
 # Add comparison and analysis of multiple modalities
 <center  class="half">    
