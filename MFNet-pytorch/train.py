@@ -10,6 +10,7 @@ from torch.utils.data import DataLoader
 
 from util.MF_dataset import MF_dataset
 from util.RSUSS_dataset import RSUSS_dataset
+from util.Potsdam import Potsdam_dataset
 from util.util import calculate_accuracy
 from util.augmentation import RandomFlip, RandomCrop, RandomCropOut, RandomBrightness, RandomNoise
 from model import MFNet, SegNet, SSegNet, ResNetMFNet
@@ -17,7 +18,7 @@ from model import MFNet, SegNet, SSegNet, ResNetMFNet
 from tqdm import tqdm
 
 # config
-n_class   = 7
+n_class   = 8
 data_dir  = '../../data/MF/'
 model_dir = 'weights/'
 augmentation_methods = [
@@ -107,6 +108,11 @@ def validation(epo, model, val_loader):
 def main():
 
     model = eval(args.model_name)(n_class=n_class)
+
+    #final_model = "weights/MFNet/RSUSS_final.pth"
+    #model.load_state_dict(torch.load(final_model))
+    #print("Loading weights done.")
+
     if args.gpu >= 0: model.cuda(args.gpu)
     optimizer = torch.optim.SGD(model.parameters(), lr=lr_start, momentum=0.9, weight_decay=0.0005)
     # optimizer = torch.optim.Adam(model.parameters(), lr=lr_start)
@@ -117,8 +123,8 @@ def main():
         optimizer.load_state_dict(torch.load(checkpoint_optim_file))
         print('done!')
 
-    train_dataset = RSUSS_dataset(data_dir, 'train', have_label=True, transform=augmentation_methods)
-    val_dataset  = RSUSS_dataset(data_dir, 'val', have_label=True)
+    train_dataset = Potsdam_dataset(data_dir, 'train', have_label=True, transform=augmentation_methods)
+    val_dataset  = Potsdam_dataset(data_dir, 'test', have_label=True)
 
     train_loader  = DataLoader(
         dataset     = train_dataset,
@@ -143,33 +149,35 @@ def main():
         print('\n| epo #%s begin...' % epo)
 
         train(epo, model, train_loader, optimizer)
-        validation(epo, model, val_loader)
+        #validation(epo, model, val_loader)
 
         # save check point model
         print('| saving check point model file... ', end='')
         torch.save(model.state_dict(), checkpoint_model_file)
         torch.save(optimizer.state_dict(), checkpoint_optim_file)
+        print(final_model_file)
         print('done!')
 
     os.rename(checkpoint_model_file, final_model_file)
+    print(final_model_file)
 
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='Train MFNet with pytorch')
     parser.add_argument('--model_name',  '-M',  type=str, default='MFNet')
     parser.add_argument('--batch_size',  '-B',  type=int, default=8)
-    parser.add_argument('--epoch_max' ,  '-E',  type=int, default=50)
+    parser.add_argument('--epoch_max' ,  '-E',  type=int, default=10)
     parser.add_argument('--epoch_from',  '-EF', type=int, default=1)
     parser.add_argument('--gpu',         '-G',  type=int, default=0)
     parser.add_argument('--num_workers', '-j',  type=int, default=8)
     args = parser.parse_args()
 
-    model_dir = os.path.join(model_dir, args.model_name)
+    model_dir = os.path.join(model_dir, args.model_name, 'RSUSS')
     os.makedirs(model_dir, exist_ok=True)
-    checkpoint_model_file = os.path.join(model_dir, 'tmp.pth')
-    checkpoint_optim_file = os.path.join(model_dir, 'tmp.optim')
-    final_model_file      = os.path.join(model_dir, 'final.pth')
-    log_file              = os.path.join(model_dir, 'log.txt')
+    checkpoint_model_file = os.path.join(model_dir, 'RSUSS_5tmp.pth')
+    checkpoint_optim_file = os.path.join(model_dir, 'RSUSS5tmp.optim')
+    final_model_file      = os.path.join(model_dir, 'RSUSS_PT_10.pth')
+    log_file              = os.path.join(model_dir, 'RSUSS_5log.txt')
 
     print('| training %s on GPU #%d with pytorch' % (args.model_name, args.gpu))
     print('| from epoch %d / %s' % (args.epoch_from, args.epoch_max))

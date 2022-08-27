@@ -10,6 +10,7 @@ from torch.autograd import Variable
 from torch.utils.data import DataLoader
 
 from util.RSUSS_dataset import RSUSS_dataset
+from util.Potsdam import Potsdam_dataset
 from util.util import calculate_accuracy, calculate_result
 
 from model import MFNet, SegNet, SSegNet
@@ -17,7 +18,7 @@ from train import n_class, data_dir, model_dir
 
 
 def main():
-    
+
     cf = np.zeros((n_class, n_class))
 
     model = eval(args.model_name)(n_class=n_class)
@@ -26,7 +27,7 @@ def main():
     model.load_state_dict(torch.load(final_model_file, map_location={'cuda:0':'cuda:1'}))
     print('done!')
 
-    test_dataset  = RSUSS_dataset(data_dir, 'test', have_label=True)
+    test_dataset  = Potsdam_dataset(data_dir, 'test', have_label=True)
     test_loader  = DataLoader(
         dataset     = test_dataset,
         batch_size  = args.batch_size,
@@ -58,9 +59,17 @@ def main():
                     % (it+1, test_loader.n_iter, float(loss), float(acc)))
 
             predictions = logits.argmax(1)
-            for gtcid in range(n_class): 
+            print(predictions.max(),predictions.min())
+            preds = predictions.clone()
+            #predictions[preds==2] = 5
+            #predictions[preds==3] = 6
+            #predictions[preds==4] = 0
+            #predictions[preds==6] = 4
+            #predictions[preds==5] = 0
+
+            for gtcid in range(n_class):
                 for pcid in range(n_class):
-                    gt_mask      = labels == gtcid 
+                    gt_mask      = labels == gtcid
                     pred_mask    = predictions == pcid
                     intersection = gt_mask * pred_mask
                     cf[gtcid, pcid] += int(intersection.sum())
@@ -84,7 +93,9 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     model_dir        = os.path.join(model_dir, args.model_name)
-    final_model_file = os.path.join(model_dir, 'final.pth')
+    #final_model_file = os.path.join(model_dir, 'PT_resnet_final.pth')
+    #final_model_file = os.path.join(model_dir, 'final.pth')
+    final_model_file = os.path.join(model_dir, 'RSUSS/RSUSS_PT_5.pth')
     assert os.path.exists(final_model_file), 'model file `%s` do not exist' % (final_model_file)
 
     print('| testing %s on GPU #%d with pytorch' % (args.model_name, args.gpu))

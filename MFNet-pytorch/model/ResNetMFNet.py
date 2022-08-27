@@ -40,8 +40,8 @@ class MFNet(nn.Module):
         rgb_ch = [32,64,128,256]
         inf_ch = [32,64,128,256]
 
-        self.resnet_rgb = resnet50(pretrained=True)
-        self.resnet_h = resnet50(pretrained=True)
+        self.resnet_rgb = resnet18(pretrained=True)
+        self.resnet_h = resnet18(pretrained=True)
         #modules_rgb = list(resnet_rgb.children())[:-2]
         #modules_h = list(resnet_h.children())[:-2]
         #self.backbone_rgb = nn.Sequential(*modules_rgb)
@@ -88,6 +88,8 @@ class MFNet(nn.Module):
         x = F.upsample(x, scale_factor=2, mode='nearest') # unpool1
         x = self.decode1(x)
         x = F.upsample(x, scale_factor=2, mode='nearest') # unpool1
+        self.resnet_rgb.requires_grad = False
+        self.resnet_h.requires_grad = False
 
         return x
 
