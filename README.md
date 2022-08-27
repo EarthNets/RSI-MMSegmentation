@@ -46,5 +46,5 @@ The proposed benchmark dataset RSMSS can be donwloaded from the following [link]
 
 # Add experiments to study the transferability
 <div  align="center">    
- <img src="resources/res3.png" width = "920" height = "150" alt="RSMSS" align=center />
+ <img src="resources/res3.png" width = "900" height = "150" alt="RSMSS" align=center />
 </div>
