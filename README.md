@@ -48,3 +48,8 @@ The proposed benchmark dataset RSMSS can be donwloaded from the following [link]
 <div  align="center">    
  <img src="resources/res3.png" width = "750" height = "150" alt="RSMSS" align=center />
 </div>
+We transfer the trained network weights from the proposed RSUSS dataset to the ISPRS Potsdam ataset. 
+For the zero-shot transfer learning results, weights learned from our dataset can be directly transferred to the Potsdam dataset.
+The results is no-doubt higher than that of weights from ImageNet. 
+By fine-tuning the model on Potsdam dataset for 5 epochs, our results is clearly higher than weights from ImageNet. 
+
