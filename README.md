@@ -20,7 +20,7 @@ The proposed benchmark dataset RSMSS can be donwloaded from the following [link]
 </div>
 
 <div  align="center">    
- <img src="resources/trans_fuse.png" width = "990" height = "570" alt="RSMSS" align=center />
+ <img src="resources/trans_fuse.png" width = "990" height = "470" alt="RSMSS" align=center />
 </div>
 
   Comparison results of different multi-modal fusion strategies on the RSMSS dataset for supervised semantic segmentation.
