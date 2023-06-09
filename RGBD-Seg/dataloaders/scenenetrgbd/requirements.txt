@@ -1,4 +1,0 @@
-pillow
-protobuf
-termcolor
-tqdm

@@ -1,1 +1,0 @@
-from .RTFNet import RTFNet
