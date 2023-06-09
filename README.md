@@ -14,7 +14,7 @@ The proposed benchmark dataset RSMSS can be donwloaded from the following [link]
 # Add results of using only the height modality
 
 <div  align="center">    
- <img src="resources/gamus.png" width = "613" height = "460" alt="GAMUS" align=center />
+ <img src="resources/gamus.png" width = "1013" height = "460" alt="GAMUS" align=center />
 </div>
 
   Comparison results of different multi-modal fusion methods on the RSMSS dataset for supervised semantic segmentation。
