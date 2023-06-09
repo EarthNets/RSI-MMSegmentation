@@ -16,11 +16,11 @@ The proposed benchmark dataset RSMSS can be donwloaded from the following [link]
   Comparison results of different multi-modal fusion methods on the RSMSS dataset for supervised semantic segmentation。
 
 <div  align="center">    
- <img src="resources/cnn_fuse.png" width = "620" height = "502" alt="GAMUS" align=center />
+ <img src="resources/cnn_fuse.png" width = "620" height = "620" alt="GAMUS" align=center />
 </div>
 
 <div  align="center">    
- <img src="resources/RSMSS.png" width = "990" height = "270" alt="RSMSS" align=center />
+ <img src="resources/trans_fuse.png" width = "990" height = "270" alt="RSMSS" align=center />
 </div>
 
   Comparison results of different multi-modal fusion strategies on the RSMSS dataset for supervised semantic segmentation.
