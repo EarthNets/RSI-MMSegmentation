@@ -31,3 +31,12 @@ The proposed benchmark dataset RSMSS can be donwloaded from the following [link]
  <img src="resources/R1.png" width = "600" height = "800" alt="RSMSS" align=center />
 </div>
 
+# References
+'''
+@article{xiong2023gamus,
+  title={GAMUS: A Geometry-aware Multi-modal Semantic Segmentation Benchmark for Remote Sensing Data},
+  author={Xiong, Zhitong and Chen, Sining and Wang, Yi and Mou, Lichao and Zhu, Xiao Xiang},
+  journal={arXiv preprint arXiv:2305.14914},
+  year={2023}
+}
+'''
