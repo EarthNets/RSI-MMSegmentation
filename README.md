@@ -7,7 +7,7 @@ The proposed benchmark dataset RSMSS can be donwloaded from the following [link]
 https://syncandshare.lrz.de/dl/fiBpfqvv7QE3MxRC18Uocq/GAMUS.zip
 
 # Update
-- [x] Remote the cities (OMA and JAX) from the DFC 2019 dataset to ensure the label quality
+- [x] Remove the cities (OMA and JAX) from the DFC 2019 dataset to ensure the label quality
 - [x] Add pytorch dataloader
 - [ ] Simplify the codebase
 - [ ] Re-run all experiments
