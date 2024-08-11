@@ -4,6 +4,7 @@ Official code for:
 ## GAMUS: A Geometry-aware Multi-modal Semantic Segmentation Benchmark for Remote Sensing Data
 
 The proposed benchmark dataset RSMSS can be downloaded from the following [XShadow/GAMUS](https://huggingface.co/datasets/XShadow/GAMUS).
+
 The old version of data containing DFC 2019: [link](https://syncandshare.lrz.de/dl/fiBpfqvv7QE3MxRC18Uocq/GAMUS.zip)
 
 # Update
