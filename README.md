@@ -9,8 +9,8 @@ https://syncandshare.lrz.de/dl/fiBpfqvv7QE3MxRC18Uocq/GAMUS.zip
 # Update
 - [x] Remote the cities (OMA and JAX) from the DFC 2019 dataset to ensure the label quality
 - [x] Add pytorch dataloader
-- [] Simplify the codebase
-- [] Re-run all experiments
+- [ ] Simplify the codebase
+- [ ] Re-run all experiments
 
 
  Comparison results of different multi-modal fusion methods on the RSMSS dataset for supervised semantic segmentation。
