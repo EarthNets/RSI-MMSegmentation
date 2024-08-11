@@ -24,11 +24,6 @@ https://syncandshare.lrz.de/dl/fiBpfqvv7QE3MxRC18Uocq/GAMUS.zip
 
   Comparison results of different multi-modal fusion strategies on the RSMSS dataset for supervised semantic segmentation.
 
-# Add visualization examples of different multi-modal fusion methods
-
-<div  align="center">    
- <img src="resources/R1.png" width = "600" height = "800" alt="RSMSS" align=center />
-</div>
 
 # References
 ```
