@@ -22,7 +22,7 @@ The old version of data containing DFC 2019: [link](https://syncandshare.lrz.de/
 - 5-road
 - 6-tree
 
-
+# Network Architectures
 <div  align="center">    
  <img src="resources/cnn_fuse.png" width = "620" height = "620" alt="GAMUS" align=center />
 </div>
@@ -30,8 +30,6 @@ The old version of data containing DFC 2019: [link](https://syncandshare.lrz.de/
 <div  align="center">    
  <img src="resources/trans_fuse.png" width = "990" height = "415" alt="RSMSS" align=center />
 </div>
-
-  Comparison results of different multi-modal fusion strategies on the RSMSS dataset for supervised semantic segmentation.
 
 
 # References
