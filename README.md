@@ -6,14 +6,14 @@ The new version of the GAMUS dataset can be downloaded from the following [XShad
 
 The old version of data containing DFC 2019: [link](https://syncandshare.lrz.de/dl/fiBpfqvv7QE3MxRC18Uocq/GAMUS.zip)
 
-# Update
+## Update
 - [x] Remove the cities (OMA and JAX) from the DFC 2019 dataset to ensure the label quality
 - [x] Add pytorch dataloader
 - [ ] Simplify the codebase
 - [ ] Re-run all experiments
 
 
-# Dataset classes:
+## Dataset classes:
 - 0-others (backgoround)
 - 1-ground
 - 2-low vegetation
@@ -22,7 +22,7 @@ The old version of data containing DFC 2019: [link](https://syncandshare.lrz.de/
 - 5-road
 - 6-tree
 
-# Network Architectures
+## Network Architectures
 <div  align="center">    
  <img src="resources/cnn_fuse.png" width = "620" height = "620" alt="GAMUS" align=center />
 </div>
@@ -32,7 +32,7 @@ The old version of data containing DFC 2019: [link](https://syncandshare.lrz.de/
 </div>
 
 
-# References
+## References
 ```
 @article{xiong2023gamus,
   title={GAMUS: A Geometry-aware Multi-modal Semantic Segmentation Benchmark for Remote Sensing Data},
