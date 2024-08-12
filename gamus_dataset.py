@@ -16,7 +16,7 @@ class GamusDataset(Dataset):
         self.class_dir = os.path.join(root_dir, 'classes', split)
         self.height_dir = os.path.join(root_dir, 'heights', split)
 
-        self.image_files = sorted([f for f in os.listdir(self.image_dir) if f.endswith('IMG.h5')])
+        self.image_files = sorted([f for f in os.listdir(self.image_dir) if f.endswith('.h5')])
 
     def __len__(self):
         return len(self.image_files)
@@ -28,19 +28,19 @@ class GamusDataset(Dataset):
         # Load image
         img_path = os.path.join(self.image_dir, img_file)
         with h5py.File(img_path, 'r') as f:
-            image = f['data'][()]  # Assuming the image is stored as a numpy array
+            image = f['image'][()]  # Assuming the image is stored as a numpy array
 
         # Load class
         cls_file = f"{base_name}CLS.h5"
         cls_path = os.path.join(self.class_dir, cls_file)
         with h5py.File(cls_path, 'r') as f:
-            class_label = f['data'][()]
+            class_label = f['image'][()]
 
         # Load height
         agl_file = f"{base_name}AGL.h5"
         agl_path = os.path.join(self.height_dir, agl_file)
         with h5py.File(agl_path, 'r') as f:
-            height = f['data'][()]
+            height = f['image'][()]
 
         # Convert image to PIL Image for transforms
         image = Image.fromarray(image.astype(np.uint8))
@@ -69,4 +69,10 @@ if __name__=="__main__":
     train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=4)
     val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False, num_workers=4)
     test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False, num_workers=4)
+
+    for data_batch in val_loader:
+        print(data_batch[0].shape)
+        print(data_batch[1].shape)
+        print(data_batch[2].shape)
+        break
 

@@ -1,7 +1,6 @@
 # RSI-MMSegmentation
 
-Official code for:
-## GAMUS: A Geometry-aware Multi-modal Semantic Segmentation Benchmark for Remote Sensing Data
+Official code for ``GAMUS: A Geometry-aware Multi-modal Semantic Segmentation Benchmark for Remote Sensing Data''
 
 The new version of the GAMUS dataset can be downloaded from the following [XShadow/GAMUS](https://huggingface.co/datasets/XShadow/GAMUS).
 
@@ -14,7 +13,15 @@ The old version of data containing DFC 2019: [link](https://syncandshare.lrz.de/
 - [ ] Re-run all experiments
 
 
- Comparison results of different multi-modal fusion methods on the RSMSS dataset for supervised semantic segmentation。
+# Dataset classes:
+- 0-others (backgoround)
+- 1-ground
+- 2-low vegetation
+- 3-buildings
+- 4-water
+- 5-road
+- 6-tree
+
 
 <div  align="center">    
  <img src="resources/cnn_fuse.png" width = "620" height = "620" alt="GAMUS" align=center />
